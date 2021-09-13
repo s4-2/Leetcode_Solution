@@ -1,0 +1,27 @@
+sen=input()
+d={}
+l=[]
+
+res=""
+
+i=0
+l=len(sen)
+
+for j in range(l):
+    a=sen[j]
+    
+    res=res+a
+    
+    if a==' ' or j==l-1:
+        d[i]=res
+        i+=1 
+        res=""
+        
+a=len(d[0])
+c=d[0]
+for i in range(1,len(d)):
+    b=len(d[i])
+    if a<b:
+        c=d[i]
+    
+print(c)
