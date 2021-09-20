@@ -1,0 +1,55 @@
+
+* This code will give the output of how many alphabate shoud replace in p to make it a substring of s. *
+Example:
+
+INPUT:       OUTPUT:
+abcdef        2
+acbdef
+
+INPUT        OUTPUT:
+subs          0
+sub
+
+
+def find(s,p):
+    s1=len(s)
+    p1=len(p)
+    c=0
+    #k=0
+    if s1<p1:
+        return 0
+    if s1==p1:
+        for i in range(s1):
+            if s[i]!=p[i]:
+                c+=1
+        return c
+    else:
+        l=p1
+        st=''
+        d={}
+        for i in range(s1):
+            k=0
+            st=s[i:l]
+            
+            if len(st)<p1:
+                break
+            for j in range(p1):
+                
+                if st[j]==p[j]:
+                    k+=1
+                    
+            d[i]=k
+            l+=1
+            
+        Keymax = max(zip(d.values(), d.keys()))[1]
+        r=p1-d[Keymax]
+        
+        return r        
+
+
+if __name__=="__main__":
+    for i in range(int(input): # Input the number of testcase
+        s=input()
+        p=input()
+        res=find(s,p)
+        print(res)
