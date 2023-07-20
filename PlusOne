@@ -1,0 +1,17 @@
+if __name__=="__main__":
+    A=[9,9,9,9,9,9]
+    if not A:
+        print("Empty")
+    else:
+        n=len(A)
+            
+        temp=0
+        for i in A:                
+            rev=temp*10+i
+            temp=rev
+        
+        print(temp+1)
+    
+    res = [int(x) for x in str(temp+1)]
+    
+    print(res)
