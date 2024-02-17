@@ -1,0 +1,34 @@
+# Remove suffix like ing, ly, ed from given word. If the word is greater than 8 make it the size of 8.
+
+text="a boy is jumping quickly it is very dangerous ing"
+
+s1=""
+l1=[]
+text=text+" "
+for i in text:
+    if i==" ":
+        l1.append(s1)
+        s1=""
+    else:
+        s1=s1+i
+print(l1)
+str1=""
+s2=""
+s3=""
+for i in l1:
+    s2=i
+    if len(i)>8:
+        print(i[0:8])
+        str1=str1+i[0:8]
+    l2=len(i)
+
+    if l2<8:
+        if "ing" in i:
+            s2=s2.replace("ing","")
+        if "ly" in i:
+            s2=s2.replace("ly","")
+        if "ed" in i:
+            s2=s2.replace("ed","")
+        str1=str1+s2+" "
+        s2=""
+print(str1)
